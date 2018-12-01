@@ -2,27 +2,34 @@ package _00_Dynamic_Integer_Array;
 
 public class DynamicIntegerArray {
 	//1. Create a private int array. Don't initialize it.
+	private int [] q;
 
 	
 	public DynamicIntegerArray() {
 		//2. Initialize the int array to have 0 elements. 
+		q = new int[0];
 		//   This will prevent a null pointer exception
 	
 	}
 	
 	//3. Complete the steps in the add method
-	public void add(int v) {
+	public void add(int[] v) {
 		//A. create and initialize a new int array to be one 
 		//   element longer than the member array
-		
-		//B. set the last element of your new array to 
-		//   the value passed into the method
-		
+		int [] w = new int[v.length+1];
+		//B. set the last element of your new array to
+		//   the value passed into the method 
+		w[v.length-1] = v.length;
 		//C. iterate through the member array and 
 		//   copy every element from the member array 
 		//   to the new array
-		
+		for(int x = 0;x<v.length;x++){
+			w[x]= v[x];
+		}
 		//D. set the member array equal to the new array.
+		for(int x = 0;x<w.length;x++){
+			v[x]= w[x];
+		}
 	}
 	
 	//4. Complete the steps in the get method
